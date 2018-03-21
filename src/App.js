@@ -19,7 +19,10 @@ class App extends Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
-    error: undefined
+    error: undefined,
+
+    long: undefined,
+    lat: undefined
   }
 
 
@@ -27,7 +30,7 @@ class App extends Component {
       e.preventDefault();
       const city = e.target.elements.city.value;
       const country = e.target.elements.country.value;
-      const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}`);
+      const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}&units=metric`);
       const data = await api_call.json();
       console.log(data);
 
@@ -38,7 +41,9 @@ class App extends Component {
           country: data.sys.country,
           humidity: data.main.humidity,
           description: data.weather[0].description,
-          error: ""
+          error: "",
+          long: data.coord.lon,
+          lat: data.coord.lat
         });
       } else{
         this.setState({
@@ -47,7 +52,9 @@ class App extends Component {
           country: undefined,
           humidity: undefined,
           description: undefined,
-          error: "Please enter a valid location, ie. Dublin Ireland"
+          error: "Please enter a valid location, ie. Dublin Ireland",
+          long: undefined,
+          lat: undefined
         });
       }
   }
@@ -65,8 +72,11 @@ class App extends Component {
                     <MapCom
                       containerElement={<div style={{height:100+'%'}} />}
                       mapElement={<div style={{height:100+'%'}} />}
-                     />
+
+                      long={this.state.long}
+                      lat={this.state.lat}/>
                 </div>
+
                 <div className="col-xs-7 form-container">
                   <Form getWeather={this.getWeather}/>
                   <Weather temperature={this.state.temperature}

@@ -9,10 +9,14 @@ class MapCom extends Component {
       return(
         <GoogleMap
           defaultZoom={3}
-          defaultCenter={{lat: -25.363882, lng: 131.044992 }}>
+          defaultCenter={{lat: 53.3498, lng: 6.2603 }}>
             {markers.map((marker,index) => (
               <Marker {...marker}/>
             ))}
+            <Marker
+            position={{ lat: this.props.lat, lng: this.props.long }}
+            />
+
         </GoogleMap>
       )
     }
