@@ -1,10 +1,10 @@
 import React from "react";
 import {Route,NavLink,BrowserRouter} from "react-router-dom";
-import Home from "./components/Home";
-import Courses from "./components/Courses";
-import Contact from "./components/Contacts";
+import Home from "./Home";
+import Courses from "./Courses";
+import Contact from "./Contacts";
 
-class App extends React.Component {
+class Main extends React.Component {
   render() {
     return (
       <BrowserRouter>
@@ -26,4 +26,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Main;
