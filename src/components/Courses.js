@@ -18,18 +18,19 @@ class Courses extends React.Component {
         })
         .then(data => {
           this.setState({
-            forecast: data.cod.list
+            forecast: data.list
           });
-          console.log(data);
+          console.log(data.list);
         })
         .catch(error => {
           console.log(error);
         });
       }
+
     render() {
-      //console.log(forecast.list);
+      //console.log(forecast["0"]);
       const list = this.state.forecast.map( (u, i) => {
-          return <Forecast key={u.list} name={`${u.list} ${u.list}`} temp={u.list} />;
+          return <Forecast key={u[i]} name={`${u[i]} ${u[i]}`} temp={u[i]} />;
       });
       return (
         <div>
