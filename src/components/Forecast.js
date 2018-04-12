@@ -53,7 +53,7 @@ class Forecast extends React.Component {
               <h4 class="card-title">Date: {this.props.date}</h4>
               <img class="card-img-top" src={this.props.icon} alt="Card image"></img>
               <p class="card-text">{this.props.desc}</p>
-              <h4>Temperature: {this.props.temp}</h4>
+              <h4>Temperature: {this.props.temp}&deg;</h4>
               <h5>Wind Speed: {this.props.wind}</h5>
             </div>
           </div>
