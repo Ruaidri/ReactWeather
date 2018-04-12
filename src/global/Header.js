@@ -10,10 +10,10 @@ class Header extends Component {
         <div className="navbar navbar-inverse bg-inverse">
           <div className="border container d-flex justify-content-between">
             <Titles/>
-            <Main/>
+            
           </div>
         </div>
-
+        <Main/>
       </div>
     );
   }
