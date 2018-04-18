@@ -7,4 +7,5 @@ The front end is styled using Bootstrap CSS.
 Run npm install in the src folder. This will get all the node modules required to run this app.
 
 Then use the command npm start to run, or go to  https://reactweather-aee08.firebaseapp.com/forecast
- to see the hosted version
+ to see the hosted version.
+ Firebase Deploy does not allow http requests so Run: NPM start to see the app with api requests.
